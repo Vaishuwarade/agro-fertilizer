@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agro Fertilizer | Quality Agricultural Products</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f4f8f2;
+            color: #333;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            background: #1b5e20;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            color: white;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffca28;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 520px;
+
+            background:
+                linear-gradient(
+                    rgba(0, 70, 0, 0.60),
+                    rgba(0, 70, 0, 0.60)
+                ),
+                url("farm.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 21px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff9800;
+            color: white;
+            padding: 13px 27px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e68900;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================== */
+
+        .products {
+            padding: 60px 6%;
+            text-align: center;
+        }
+
+        .products h2 {
+            color: #1b5e20;
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 17px;
+        }
+
+        /* =========================
+           SEARCH
+        ========================== */
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 25px;
+            display: flex;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-box button {
+            width: 55px;
+            border: none;
+            background: #2e7d32;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .search-box button:hover {
+            background: #1b5e20;
+        }
+
+        /* =========================
+           CATEGORIES
+        ========================== */
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .category-btn {
+            padding: 10px 18px;
+            border: 2px solid #2e7d32;
+            background: white;
+            color: #2e7d32;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #2e7d32;
+            color: white;
+        }
+
+        /* =========================
+           PRODUCT GRID
+        ========================== */
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .product {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            padding-bottom: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+        }
+
+        .product img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-content {
+            padding: 18px;
+        }
+
+        .product h3 {
+            margin: 5px 0 10px;
+            color: #2e7d32;
+            font-size: 21px;
+        }
+
+        .product p {
+            margin-bottom: 10px;
+            color: #666;
+            line-height: 1.5;
+            min-height: 45px;
+        }
+
+        .category-label {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #1b5e20;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #e65100 !important;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px !important;
+            min-height: auto !important;
+        }
+
+        #noResults {
+            display: none;
+            color: #777;
+            font-size: 18px;
+            padding: 30px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            background: #e8f5e9;
+            padding: 65px 6%;
+            text-align: center;
+        }
+
+        .about h2 {
+            color: #1b5e20;
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .about > p {
+            max-width: 850px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 17px;
+            color: #555;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .feature {
+            background: white;
+            width: 230px;
+            padding: 25px 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+        }
+
+        .feature .icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            color: #2e7d32;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            padding: 60px 6%;
+            text-align: center;
+            background: white;
+        }
+
+        .contact h2 {
+            color: #1b5e20;
+            font-size: 34px;
+            margin-bottom: 30px;
+        }
+
+        .contact-container {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            width: 250px;
+            padding: 25px;
+            border-radius: 10px;
+            background: #f4f8f2;
+        }
+
+        .contact-card .icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            color: #2e7d32;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            color: #ffca28;
+        }
+
+        /* =================================================
+           PAYMENT MODAL
+        ================================================= */
+
+        .payment-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.65);
+            overflow-y: auto;
+            padding: 30px 15px;
+        }
+
+        .payment-box {
+            background: white;
+            width: 100%;
+            max-width: 550px;
+            margin: auto;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+            animation: paymentOpen 0.3s ease;
+        }
+
+        @keyframes paymentOpen {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .payment-box h2 {
+            text-align: center;
+            color: #1b5e20;
+            margin-bottom: 20px;
+        }
+
+        .close-payment {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 30px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .close-payment:hover {
+            color: #e53935;
+        }
+
+        .payment-product {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .payment-product h3 {
+            color: #1b5e20;
+            margin-bottom: 8px;
+        }
+
+        .payment-product p {
+            margin: 5px 0;
+        }
+
+        .payment-form label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .payment-form input,
+        .payment-form select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .payment-form input:focus,
+        .payment-form select:focus {
+            border-color: #2e7d32;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .payment-method {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 13px;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .payment-method:hover {
+            border-color: #2e7d32;
+            background: #f1f8f1;
+        }
+
+        .payment-method input {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .payment-submit {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            background: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .payment-submit:hover {
+            background: #1b5e20;
+        }
+
+        .secure-note {
+            text-align: center;
+            margin-top: 15px;
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 1100px) {
+
+            .product-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .hero-content h1 {
+                font-size: 45px;
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .product-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                min-height: 450px;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .logo {
+                font-size: 23px;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 420px;
+            }
+
+            .hero-content h1 {
+                font-size: 31px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .products {
+                padding: 45px 20px;
+            }
+
+            .products h2 {
+                font-size: 29px;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+            .product {
+                max-width: 380px;
+                margin: auto;
+                width: 100%;
+            }
+
+            .about {
+                padding: 45px 20px;
+            }
+
+            .contact {
+                padding: 45px 20px;
+            }
+
+            .contact-card {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .payment-box {
+                padding: 25px 18px;
+            }
+
+            .payment-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================== -->
+
+<nav>
+
+    <div class="logo">
+        🌱 Agro Fertilizer
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#products">Products</a>
+        </li>
+
+        <li>
+            <a href="#about">About Us</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Grow Better With Quality Fertilizers
+        </h1>
+
+        <p>
+            Premium agricultural fertilizers for healthy
+            crops, better soil and productive farming.
+        </p>
+
+        <a href="#products" class="btn">
+            Explore Products
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================== -->
+
+<section class="products" id="products">
+
+    <h2>
+        Our Fertilizer Products
+    </h2>
+
+    <p class="section-description">
+        Choose from our wide range of agricultural products.
+    </p>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search fertilizer..."
+            onkeyup="searchProducts()"
+        >
+
+        <button onclick="searchProducts()">
+            🔍
+        </button>
+
+    </div>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <button
+            class="category-btn active"
+            onclick="filterProducts('all', this)">
+            All
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterProducts('fertilizer', this)">
+            Fertilizers
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterProducts('liquid', this)">
+            Liquid Fertilizers
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterProducts('organic', this)">
+            Organic
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterProducts('weed', this)">
+            Weed Control
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         PRODUCT CARDS
+    ========================== -->
+
+    <div class="product-container" id="productContainer">
+
+
+        <!-- 1 UREA -->
+
+        <div class="product" data-category="fertilizer">
+
+            <img src="WhatsApp Image 2026-09-24 at 07.32.41.jpeg"
+                 alt="Urea Fertilizer">
+
+            <div class="product-content">
+
+                <span class="category-label">
+                    Fertilizer
+                </span>
+
+                <h3>
+                    Urea Fertilizer
+                </h3>
+
+                <p>
+                    Nitrogen fertilizer for supporting
+                    healthy crop growth.
+                </p>
+
+                <p class="price">
+                    ₹500 / 50 Kg
+                </p>
+
+                <button
+                    class="btn"
+                    onclick="openPayment(
+                        1,
+                        'Urea Fertilizer',
+                        '₹500 / 50 Kg',
+                        500
+                    )">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2 NPK -->
+
+        <div class="product" data-category="fertilizer">
+
+            <img src="WhatsApp Image 2026-09-24 at 07.35.06.jpeg"
+                 alt="NPK Fertilizer">
+
+            <div class="product-content">
+
+                <span class="category-label">
+                    Fertilizer
+                </span>
+
+                <h3>
+                    NPK Fertilizer
+                </h3>
+
+                <p>
+                    Balanced crop nutrition containing
+                    essential plant nutrients.
+                </p>
+
+                <p class="price">
+                    ₹750 / 50 Kg
+                </p>
+
+                <button
+                    class="btn"
+                    onclick="openPayment(
+                        2,
+                        'NPK Fertilizer',
+                        '₹750 / 50 Kg',
+                        750
+                    )">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 3 ORGANIC -->
+
+        <div class="product" data-category="organic">
+
+            <img src="WhatsApp Image 2026-09-24 at 10.04.29.jpeg"
+                 alt="Organic Fertilizer">
+
+            <div class="product-content">
+
+                <span class="category-label">
+                    Organic
+                </span>
+
+                <h3>
+                    Organic Fertilizer
+                </h3>
+
+                <p>
+                    Natural soil enrichment for improved
+                    soil health and fertility.
+                </p>
+
+                <p class="price">
+                    ₹600 / 25 Kg
+                </p>
+
+                <button
+                    class="btn"
+                    onclick="openPayment(
+                        3,
+                        'Organic Fertilizer',
+                        '₹600 / 25 Kg',
+                        600
+                    )">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 4 RAMCIDES -->
+
+        <div class="product" data-category="liquid">
+
+            <img src="WhatsApp Image 2026-09-24 at 07.38.36.jpeg"
+                 alt="Ramcides VesoMax Fertilizer">
+
+            <div class="product-content">
+
+                <span class="category-label">
+                    Liquid
+                </span>
+
+                <h3>
+                    Ramcides VesoMax
+                </h3>
+
+                <p>
+                    Foliar application fertilizer for
+                    efficient nutrient delivery.
+                </p>
+
+                <p class="price">
+                    ₹450 / 1 Litre
+                </p>
+
+                <button
+                    class="btn"
+                    onclick="openPayment(
+                        4,
+                        'Ramcides VesoMax',
+                        '₹450 / 1 Litre',
+                        450
+                    )">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5 DAP -->
+
+        <div class="product" data-category="fertilizer">
+
+            <img src="WhatsApp Image 2026-09-24 at 07.32.40.jpeg"
+                 alt="DAP Fertilizer">
+
+            <div class="product-content">
+
+                <span class="category-label">
+                    Fertilizer
+                </span>
+
+                <h3>
+                    DAP Fertilizer
+                </h3>
+
+                <p>
+                    Phosphorus-rich fertilizer for
+                    crop development.
+                </p>
+
+                <p class="price">
+                    ₹700 / 50 Kg
+                </p>
+
+                <button
+                    class="btn"
+                    onclick="openPayment(
+                        5,
+                        'DAP Fertilizer',
+                        '₹700 / 50 Kg',
+                        700
+                    )">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 6 POTASH -->
+
+        <div class="product" data-category="fertilizer">
+
+            <img src="WhatsApp Image 2026-09-24 at 07.32.39 (1).jpeg"
+                 alt="Potash Fertilizer">
+
+            <div class="product-content">
+
+                <span class="category-label">
+                    Fertilizer
+                </span>
+
+                <h3>
+                    Potash Fertilizer
+                </h3>
+
+                <p>
+                    Potassium fertilizer supporting
+                    crop quality and growth.
+                </p>
+
+                <p class="price">
+                    ₹650 / 50 Kg
+                </p>
+
+                <button
+                    class="btn"
+                    onclick="openPayment(
+                        6,
+                        'Potash Fertilizer',
+                        '₹650 / 50 Kg',
+                        650
+                    )">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 7 VERMICOMPOST -->
+
+        <div class="product" data-category="organic">
+
+            <img src="WhatsApp Image 2026-09-24 at 07.32.40 (1).jpeg"
+                 alt="Vermicompost">
+
+            <div class="product-content">
+
+                <span class="category-label">
+                    Organic
+                </span>
+
+                <h3>
+                    Vermicompost
+                </h3>
+
+                <p>
+                    Organic soil conditioner made from
+                    natural composting.
+                </p>
+
+                <p class="price">
+                    ₹350 / 25 Kg
+                </p>
+
+                <button
+                    class="btn"
+                    onclick="openPayment(
+                        7,
+                        'Vermicompost',
+                        '₹350 / 25 Kg',
+                        350
+                    )">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 8 NANO DAP -->
+
+        <div class="product" data-category="liquid">
+
+            <img src="WhatsApp Image 2026-09-24 at 07.32.40 (2).jpeg"
+                 alt="Nano DAP Fertilizer">
+
+            <div class="product-content">
+
+                <span class="category-label">
+                    Liquid
+                </span>
+
+                <h3>
+                    Nano DAP
+                </h3>
+
+                <p>
+                    Liquid nano fertilizer containing
+                    nitrogen and phosphorus.
+                </p>
+
+                <p class="price">
+                    ₹600 / 500 ml
+                </p>
+
+                <button
+                    class="btn"
+                    onclick="openPayment(
+                        8,
+                        'Nano DAP',
+                        '₹600 / 500 ml',
+                        600
+                    )">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 9 ROUNDUP -->
+
+        <div class="product" data-category="weed">
+
+            <img src="WhatsApp Image 2026-09-24 at 07.32.39 (2).jpeg"
+                 alt="Roundup">
+
+            <div class="product-content">
+
+                <span class="category-label">
+                    Weed Control
+                </span>
+
+                <h3>
+                    Roundup
+                </h3>
+
+                <p>
+                    Herbicide product used for
+                    weed management.
+                </p>
+
+                <p class="price">
+                    ₹550 / 1 Litre
+                </p>
+
+                <button
+                    class="btn"
+                    onclick="openPayment(
+                        9,
+                        'Roundup',
+                        '₹550 / 1 Litre',
+                        550
+                    )">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 10 SWEEP POWER -->
+
+        <div class="product" data-category="weed">
+
+            <img src="WhatsApp Image 2026-09-24 at 10.27.15.jpeg"
+                 alt="Sweep Power">
+
+            <div class="product-content">
+
+                <span class="category-label">
+                    Weed Control
+                </span>
+
+                <h3>
+                    Sweep Power
+                </h3>
+
+                <p>
+                    Herbicide product used for
+                    weed management.
+                </p>
+
+                <p class="price">
+                    ₹550 / 1 Litre
+                </p>
+
+                <button
+                    class="btn"
+                    onclick="openPayment(
+                        10,
+                        'Sweep Power',
+                        '₹550 / 1 Litre',
+                        550
+                    )">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 11 CALCIUM AMMONIUM NITRATE -->
+
+        <div class="product" data-category="fertilizer">
+
+            <img src="WhatsApp Image 2026-09-24 at 10.12.20.jpeg"
+                 alt="Calcium Ammonium Nitrate">
+
+            <div class="product-content">
+
+                <span class="category-label">
+                    Fertilizer
+                </span>
+
+                <h3>
+                    Calcium Ammonium Nitrate
+                </h3>
+
+                <p>
+                    Nitrogen and calcium fertilizer
+                    for crop nutrition.
+                </p>
+
+                <p class="price">
+                    ₹650 / 50 Kg
+                </p>
+
+                <button
+                    class="btn"
+                    onclick="openPayment(
+                        11,
+                        'Calcium Ammonium Nitrate',
+                        '₹650 / 50 Kg',
+                        650
+                    )">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 12 MURIATE OF POTASH -->
+
+        <div class="product" data-category="fertilizer">
+
+            <img src="WhatsApp Image 2026-09-24 at 10.14.00.jpeg"
+                 alt="Muriate of Potash">
+
+            <div class="product-content">
+
+                <span class="category-label">
+                    Fertilizer
+                </span>
+
+                <h3>
+                    Muriate of Potash
+                </h3>
+
+                <p>
+                    Potassium chloride fertilizer
+                    for potassium nutrition.
+                </p>
+
+                <p class="price">
+                    ₹650 / 50 Kg
+                </p>
+
+                <button
+                    class="btn"
+                    onclick="openPayment(
+                        12,
+                        'Muriate of Potash',
+                        '₹650 / 50 Kg',
+                        650
+                    )">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <p id="noResults">
+        No products found. Try another search.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     ABOUT US
+========================== -->
+
+<section class="about" id="about">
+
+    <h2>
+        About Agro Fertilizer
+    </h2>
+
+    <p>
+        Agro Fertilizer provides quality agricultural
+        products to support healthy crops, productive
+        farming and better soil management. Our product
+        range includes fertilizers, liquid fertilizers,
+        organic products and weed management solutions.
+    </p>
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="icon">🌱</div>
+
+            <h3>
+                Quality Products
+            </h3>
+
+            <p>
+                Reliable agricultural products for farmers.
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <div class="icon">🚜</div>
+
+            <h3>
+                Better Farming
+            </h3>
+
+            <p>
+                Products designed to support productive farming.
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <div class="icon">💰</div>
+
+            <h3>
+                Affordable Prices
+            </h3>
+
+            <p>
+                Agricultural products at reasonable prices.
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <div class="icon">📦</div>
+
+            <h3>
+                Easy Ordering
+            </h3>
+
+            <p>
+                Convenient online product ordering.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================== -->
+
+<section class="contact" id="contact">
+
+    <h2>
+        Contact Us
+    </h2>
+
+    <div class="contact-container">
+
+        <div class="contact-card">
+
+            <div class="icon">📞</div>
+
+            <h3>
+                Phone
+            </h3>
+
+            <p>
+                +91 98765 43210
+            </p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <div class="icon">📧</div>
+
+            <h3>
+                Email
+            </h3>
+
+            <p>
+                info@agrofertilizer.com
+            </p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <div class="icon">📍</div>
+
+            <h3>
+                Address
+            </h3>
+
+            <p>
+                Maharashtra, India
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="footer-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#products">Products</a>
+
+        <a href="#about">About</a>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
+    <p>
+        ©️ 2026 Agro Fertilizer | All Rights Reserved
+    </p>
+
+    <p>
+        Quality Products • Better Farming • Better Future 🌱
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     PAYMENT MODAL
+===================================================== -->
+
+<div class="payment-modal" id="paymentModal">
+
+    <div class="payment-box">
+
+        <span
+            class="close-payment"
+            onclick="closePayment()">
+            &times;
+        </span>
+
+        <h2>
+            💳 Checkout & Payment
+        </h2>
+
+
+        <!-- SELECTED PRODUCT -->
+
+        <div class="payment-product">
+
+            <h3 id="paymentProductName">
+                Product Name
+            </h3>
+
+            <p>
+                Price:
+                <strong id="paymentProductPrice">
+                    ₹0
+                </strong>
+            </p>
+
+        </div>
+
+
+        <!-- PAYMENT FORM -->
+
+        <form
+            action="payment.php"
+            method="POST"
+            class="payment-form">
+
+            <!-- Hidden product information -->
+
+            <input
+                type="hidden"
+                name="product_id"
+                id="paymentProductId">
+
+            <input
+                type="hidden"
+                name="product_name"
+                id="paymentProductNameInput">
+
+            <input
+                type="hidden"
+                name="price"
+                id="paymentProductAmount">
+
+
+            <!-- CUSTOMER NAME -->
+
+            <label for="customerName">
+                Customer Name
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                name="customer_name"
+                placeholder="Enter your name"
+                required>
+
+
+            <!-- PHONE -->
+
+            <label for="phone">
+                Mobile Number
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter mobile number"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                required>
+
+
+            <!-- EMAIL -->
+
+            <label for="email">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter email address"
+                required>
+
+
+            <!-- ADDRESS -->
+
+            <label for="address">
+                Delivery Address
+            </label>
+
+            <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Enter delivery address"
+                required>
+
+
+            <!-- QUANTITY -->
+
+            <label for="quantity">
+                Quantity
+            </label>
+
+            <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                value="1"
+                min="1"
+                required
+                onchange="updateTotal()">
+
+
+            <!-- TOTAL -->
+
+            <label>
+                Total Amount
+            </label>
+
+            <input
+                type="text"
+                id="totalAmountDisplay"
+                value="₹0"
+                readonly
+                style="
+                    background:#f1f8f1;
+                    font-weight:bold;
+                    color:#e65100;
+                ">
+
+
+            <input
+                type="hidden"
+                id="totalAmount"
+                name="total_amount">
+
+
+            <!-- PAYMENT METHOD -->
+
+            <label>
+                Select Payment Method
+            </label>
+
+            <div class="payment-methods">
+
+                <label class="payment-method">
+
+                    <input
+                        type="radio"
+                        name="payment_method"
+                        value="UPI"
+                        required>
+
+                    📱 UPI
+
+                </label>
+
+
+                <label class="payment-method">
+
+                    <input
+                        type="radio"
+                        name="payment_method"
+                        value="Card">
+
+                    💳 Card
+
+                </label>
+
+
+                <label class="payment-method">
+
+                    <input
+                        type="radio"
+                        name="payment_method"
+                        value="Net Banking">
+
+                    🏦 Net Banking
+
+                </label>
+
+
+                <label class="payment-method">
+
+                    <input
+                        type="radio"
+                        name="payment_method"
+                        value="Cash on Delivery">
+
+                    💵 Cash on Delivery
+
+                </label>
+
+            </div>
+
+
+            <!-- PAYMENT BUTTON -->
+
+            <button
+                type="submit"
+                class="payment-submit">
+
+                Proceed to Payment
+
+            </button>
+
+
+            <p class="secure-note">
+                🔒 Your payment information should be processed
+                securely through a payment gateway.
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script>
+
+    /* =========================
+       CATEGORY FILTER
+    ========================== */
+
+    function filterProducts(category, button) {
+
+        let products =
+            document.querySelectorAll(".product");
+
+        let buttons =
+            document.querySelectorAll(".category-btn");
+
+        let searchInput =
+            document.getElementById("searchInput");
+
+        searchInput.value = "";
+
+        buttons.forEach(function(btn) {
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+        let visibleProducts = 0;
+
+        products.forEach(function(product) {
+
+            let productCategory =
+                product.getAttribute("data-category");
+
+            if (
+                category === "all" ||
+                productCategory === category
+            ) {
+
+                product.style.display = "block";
+
+                visibleProducts++;
+
+            } else {
+
+                product.style.display = "none";
+
+            }
+
+        });
+
+        document.getElementById("noResults").style.display =
+            visibleProducts === 0 ? "block" : "none";
+    }
+
+
+    /* =========================
+       SEARCH PRODUCTS
+    ========================== */
+
+    function searchProducts() {
+
+        let input =
+            document.getElementById("searchInput")
+            .value
+            .toLowerCase()
+            .trim();
+
+        let products =
+            document.querySelectorAll(".product");
+
+        let visibleProducts = 0;
+
+        products.forEach(function(product) {
+
+            let productName =
+                product.querySelector("h3")
+                .innerText
+                .toLowerCase();
+
+            let productDescription =
+                product.querySelector(".product-content p")
+                .innerText
+                .toLowerCase();
+
+            if (
+                productName.includes(input) ||
+                productDescription.includes(input)
+            ) {
+
+                product.style.display = "block";
+
+                visibleProducts++;
+
+            } else {
+
+                product.style.display = "none";
+
+            }
+
+        });
+
+
+        document.querySelectorAll(".category-btn")
+            .forEach(function(btn) {
+
+                btn.classList.remove("active");
+
+            });
+
+
+        if (input === "") {
+
+            document.querySelector(
+                ".category-btn"
+            ).classList.add("active");
+
+        }
+
+
+        document.getElementById("noResults").style.display =
+            visibleProducts === 0 ? "block" : "none";
+    }
+
+
+    /* =================================================
+       OPEN PAYMENT WINDOW
+    ================================================= */
+
+    let selectedPrice = 0;
+
+
+    function openPayment(
+        productId,
+        productName,
+        productPrice,
+        price
+    ) {
+
+        selectedPrice = price;
+
+        document.getElementById(
+            "paymentProductId"
+        ).value = productId;
+
+
+        document.getElementById(
+            "paymentProductName"
+        ).innerText = productName;
+
+
+        document.getElementById(
+            "paymentProductPrice"
+        ).innerText = productPrice;
+
+
+        document.getElementById(
+            "paymentProductNameInput"
+        ).value = productName;
+
+
+        document.getElementById(
+            "paymentProductAmount"
+        ).value = price;
+
+
+        document.getElementById(
+            "quantity"
+        ).value = 1;
+
+
+        updateTotal();
+
+
+        document.getElementById(
+            "paymentModal"
+        ).style.display = "block";
+
+
+        document.body.style.overflow = "hidden";
+    }
+
+
+    /* =================================================
+       CLOSE PAYMENT WINDOW
+    ================================================= */
+
+    function closePayment() {
+
+        document.getElementById(
+            "paymentModal"
+        ).style.display = "none";
+
+        document.body.style.overflow = "auto";
+    }
+
+
+    /* =================================================
+       UPDATE TOTAL
+    ================================================= */
+
+    function updateTotal() {
+
+        let quantity =
+            parseInt(
+                document.getElementById("quantity").value
+            ) || 1;
+
+
+        let total =
+            selectedPrice * quantity;
+
+
+        document.getElementById(
+            "totalAmountDisplay"
+        ).value = "₹" + total;
+
+
+        document.getElementById(
+            "totalAmount"
+        ).value = total;
+    }
+
+
+    /* =================================================
+       CLOSE MODAL WHEN CLICKING OUTSIDE
+    ================================================= */
+
+    window.onclick = function(event) {
+
+        let modal =
+            document.getElementById("paymentModal");
+
+        if (event.target === modal) {
+
+            closePayment();
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
